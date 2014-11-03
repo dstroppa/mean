@@ -2,4 +2,4 @@ source "https://supermarket.getchef.com"
 
 metadata
 
-cookbook 'mongodb', '= 0.13.7'
+cookbook 'mongodb', '~> 0.16.1'
