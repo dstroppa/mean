@@ -1,4 +1,5 @@
-source "http://api.berkshelf.com"
+source "https://supermarket.getchef.com"
+
 metadata
 
-cookbook 'mongodb', git: "https://github.com/dstroppa/chef-mongodb"
+cookbook 'mongodb', '= 0.13.7'
