@@ -1,13 +1,13 @@
-node[:deploy].each do |application, deploy|
-	directory "/journal" do
-	  group '#{deploy[:mongodb][:group]}'
-	  owner '#{deploy[:mongodb][:user]}'
-	  mode '0755'
-	end
+Chef::Log.info("Creating /journal directory with owned by '#{node[:mongodb][:group]}':'#{node[:mongodb][:user]}' ")
 
-	link "/data/journal" do
-	  to '/journal'
-	  group '#{deploy[:mongodb][:group]}'
-	  owner '#{deploy[:mongodb][:user]}'
-	end
+directory "/journal" do
+  group node['mongodb']['group']
+  owner node['mongodb']['user']
+  mode '0755'
+end
+
+link "/data/journal" do
+  to '/journal'
+  group node['mongodb']['group']
+  owner node['mongodb']['user']
 end
